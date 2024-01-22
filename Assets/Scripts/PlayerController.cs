@@ -79,9 +79,7 @@ public class PlayerController : MonoBehaviour
 
     void OnFlatten()
     {
-        // gameObject.transform.localScale = 
-        gameObject.transform.localScale = Vector3.left * 2;
-
+        transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y * 0.5f, transform.localScale.z * 2);
     }
 
     void OnCollisionEnter(Collision collision)
