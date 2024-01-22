@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpHeight = 5f;
+    bool isFlattened = false;
 
     Vector2 moveValue = Vector2.zero;
 
@@ -77,9 +78,14 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void OnFlatten()
-    {
-        transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y * 0.5f, transform.localScale.z * 2);
+    void OnFlatten(){
+
+        if (isFlattened == false)
+        {
+            transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y * 0.5f, transform.localScale.z * 2);
+            isFlattened = true;
+        }
+
     }
 
     void OnCollisionEnter(Collision collision)
