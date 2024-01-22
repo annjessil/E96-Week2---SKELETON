@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpHeight = 5f;
-    bool isFlattened = false;
+    bool isFlattened = false; //for onFlatten() function
 
     Vector2 moveValue = Vector2.zero;
 
@@ -80,10 +80,10 @@ public class PlayerController : MonoBehaviour
 
     void OnFlatten(){
 
-        if (isFlattened == false)
+        if (isFlattened == false) //checks if player has been flattended before
         {
             transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y * 0.5f, transform.localScale.z * 2);
-            isFlattened = true;
+            isFlattened = true; // updates isFlattened
         }
 
     }
