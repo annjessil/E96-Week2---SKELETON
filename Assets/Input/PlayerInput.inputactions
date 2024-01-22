@@ -47,7 +47,7 @@
                     "id": "8eaa89bf-ffa3-47f8-a78d-6bc9db5076cb",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -287,7 +287,7 @@
                     "name": "",
                     "id": "3d8317b8-412d-4c77-9877-cd0b5117e67d",
                     "path": "<Keyboard>/shift",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Flatten",
