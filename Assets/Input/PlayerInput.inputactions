@@ -287,7 +287,7 @@
                     "name": "",
                     "id": "3d8317b8-412d-4c77-9877-cd0b5117e67d",
                     "path": "<Keyboard>/shift",
-                    "interactions": "Hold",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Flatten",
