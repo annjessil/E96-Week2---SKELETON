@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpHeight = 5f;
     bool isFlattened = false; //for onFlatten() function
+    bool isGrounded = false;
 
     Vector2 moveValue = Vector2.zero;
 
@@ -43,8 +44,11 @@ public class PlayerController : MonoBehaviour
     void OnJump()
     {
         // TODO: check if player is on the ground, and call Jump()
-
-        Jump();
+        if (isGrounded)
+        {
+            Jump();
+        }
+        
 
 
     }
@@ -88,21 +92,24 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) //called when a collision is registered
     {
         // This function is commonly useful, but for our current implementation we don't need it
+        isGrounded = true; 
+
 
     }
 
-    void OnCollisionStay(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         // TODO: Check if we are in contact with the ground. If we are, note that we are grounded
 
     }
 
-    void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
         // TODO: When we leave the ground, we are no longer grounded
+        isGrounded = false;
 
     }
 
