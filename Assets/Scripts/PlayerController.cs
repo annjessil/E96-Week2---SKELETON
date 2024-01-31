@@ -92,24 +92,45 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision) //called when a collision is registered
+    void OnCollisionEnter(Collision collision) //called when a collision is registered
     {
         // This function is commonly useful, but for our current implementation we don't need it
-        isGrounded = true; 
+        
 
 
     }
 
-    private void OnCollisionStay(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         // TODO: Check if we are in contact with the ground. If we are, note that we are grounded
 
+        Vector3 norm = collision.GetContact(0).normal; //gets orthogonal vector to the plane
+        if (Vector3.Angle(norm, Vector3.up) < 45f)
+        {
+            isGrounded = true;
+        }
+
+
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+
+        }
+
     }
 
-    private void OnCollisionExit(Collision collision)
+    void OnCollisionExit(Collision collision)
     {
         // TODO: When we leave the ground, we are no longer grounded
-        isGrounded = false;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+
+        }
+
+
+
 
     }
 
